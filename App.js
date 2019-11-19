@@ -8,7 +8,7 @@ import * as Font from 'expo-font';
 import Bienvenido from './src/views/Bienvenido';
 
 const DrawerNavigation = createDrawerNavigator({
-  Welcome: {
+  Bienvenido: {
     screen: Bienvenido,
   },
 });
@@ -18,7 +18,7 @@ const StackNavigation = createStackNavigator(
     DrawerNavigation: {
       screen: DrawerNavigation,
     },
-    Welcome: {
+    Bienvenido: {
       screen: Bienvenido,
     },
   },
@@ -31,6 +31,7 @@ const AppContainer = createAppContainer(StackNavigation);
 async function loadResourcesAsync() {
   await Promise.all([
     Font.loadAsync({
+      'roboto-500': require('./src/assets/fonts/roboto-500.ttf'),
       'roboto-regular': require('./src/assets/fonts/roboto-regular.ttf'),
     }),
   ]);
